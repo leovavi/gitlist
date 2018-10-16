@@ -1,3 +1,6 @@
+import React from 'react';
+import { render } from 'react-dom';
+
 const App = () => {
   return React.createElement(
     "div",
@@ -5,4 +8,5 @@ const App = () => {
     React.createElement("h1", {}, "Lista de proyectos de GitHub!")
   );
 };
-ReactDOM.render(React.createElement(App), document.getElementById("root"));
+
+render(React.createElement(App), document.getElementById("root"));
