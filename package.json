@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier --write \"src/**/*.{js, jsx}\"",
-    "lint": "eslint \"**/*.{js, jsx}\" --quiet"
+    "lint": "eslint \"**/*.{js, jsx}\" --quiet",
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "author": "Leonardo Vásquez",
   "license": "ISC",

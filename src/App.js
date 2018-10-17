@@ -1,12 +1,16 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
+import Header from "./Header.js";
 
 const App = () => {
-  return React.createElement(
-    "div",
-    {},
-    React.createElement("h1", {}, "Lista de proyectos de GitHub!")
+  return (
+    <div>
+      <Header />
+      <div className="container">
+        <h1>Lista de proyectos de Github!</h1>
+      </div>
+    </div>
   );
 };
 
-render(React.createElement(App), document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));
