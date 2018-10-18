@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from "./Header.js";
+import Search from "./Search.js";
 
 const App = () => {
   return (
     <div>
-      <Header />
+      <div>
+        <Header />
+      </div>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className="container">
-        <h1>Lista de proyectos de Github!</h1>
+        <Search />
       </div>
     </div>
   );

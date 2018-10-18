@@ -16,8 +16,19 @@ module.exports = {
     reasons: true,
     chunks: false
   },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000
+  },
   module: {
     rules: [
+      {
+        enforce: "pre",
+        test: /\.jsx?$/,
+        loader: "eslint-loader",
+        exclude: /node_modules/
+      },
       {
         test: /\.jsx?$/,
         loader: "babel-loader"
