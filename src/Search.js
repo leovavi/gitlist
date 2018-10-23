@@ -1,5 +1,6 @@
 import React from 'react';
-import * as RB from "react-bootstrap";
+import Header from './Header.js';
+/*import * as RB from "react-bootstrap";
 
 const Search = () => {
     return(
@@ -12,6 +13,29 @@ const Search = () => {
             </RB.FormGroup>
         </form>
     );
-}
+}*/
+
+const Search = () => {
+    return(
+        <div>
+            <Header/>
+            <div className="container">
+                <section className="search six offset-by-three columns"> 
+                    <form>
+                        <button type="submit">
+                            <span className="fa fa-check-circle fa-2x"/>
+                        </button>
+                        <input
+                            className="u-full-width"
+                            type="text"
+                            name="username"
+                            placeholder="Enter Github Username..."
+                        />
+                    </form>
+                </section>
+            </div>
+        </div>
+    );
+};
 
 export default Search;
