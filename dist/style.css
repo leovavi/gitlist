@@ -26,6 +26,7 @@
 */
 
 @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
 
 .search {
   position: relative;
@@ -69,6 +70,15 @@
     border-radius: 4px;
 }
 
+.header Button {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  color: white;
+  background: transparent;
+  border: none;
+}
+
 .header p.logo {
     font-size: 25px;
     font-weight: bold;
@@ -79,6 +89,19 @@
   margin: auto;
   width: 60%;
   padding: 5px;
+}
+
+.buttonStyle {
+  background-color: transparent;
+  border: 0; 
+  width: 100%;
+}
+
+.buttonStyle:hover {
+  background-color: green;
+  color: white;
+  width: 100%;
+  text-align: center;
 }
 
 /* Grid
