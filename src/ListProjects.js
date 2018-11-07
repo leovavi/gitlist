@@ -36,16 +36,10 @@ class ListProjects extends Component {
         this.props.onBackHandle(this.props.history);
     }
 
-    clickProject(e){
-        e.preventDefault();
-        let projectName = e.target.name
-        let id = e.target.id;
-        let user = e.target.user;
-        console.log(`projectName: ${projectName} - key: ${id} - user: ${user}`); //eslint-disable-line
-        if(this.props.onClickProject && projectName && id && user){
-            console.log("About to do onClickProject"); //eslint-disable-line
+    clickProject(id, projectName, user){
+        console.log(`projectName: ${projectName} - id: ${id} - user: ${user}`); //eslint-disable-line
+        if(this.props.onClickProject && projectName && id && user)
             this.props.onClickProject(this.props.history, user, id, projectName);
-        }
     }
 
     render(){
@@ -67,10 +61,7 @@ class ListProjects extends Component {
                                             proj => 
                                                 <Button
                                                     key={proj.id}
-                                                    id = {proj.id}
-                                                    name = {proj.name}
-                                                    user = {proj.owner.login}
-                                                    onClick = {this.clickProject.bind(this)}
+                                                    onClick = {this.clickProject.bind(this, proj.id, proj.name, proj.owner.login)}
                                                     className = "buttonStyle"
                                                 >
                                                     {proj.name}

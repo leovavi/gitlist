@@ -9,15 +9,15 @@ const App = () => {
   const onBackHandle = (history, username) => {
     if(username){
       console.log(`Username: ${username}`); //eslint-disable-line
+      history.push(`/${username}/projects`);
     }
-    else{
+    else
       history.push("/");
-    }
   }
 
   const onClickProject = (history, username, id, name) => {
     if(username && id){
-      console.log(`Username: ${username} - Id: ${id}`); //eslint-disable-line
+      console.log(`Username: ${username} - Id: ${id} - ProjectName: ${name}`); //eslint-disable-line
       history.push(`/${username}/project/${id}/${name}`);
     }
   }
@@ -44,6 +44,7 @@ const App = () => {
           <Detail
             match = {match}
             history = {history}
+            onBackHandle = {onBackHandle}
           />
         )}/>
       </Switch>
