@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
 import Header from './Header';
 
@@ -9,7 +10,8 @@ class Detail extends Component {
         this.state = {
             username: "",
             projectName: "",
-            readme: [],
+            readmeInfo: [],
+            readme: "",
             error: ""
         }
     }
@@ -28,9 +30,13 @@ class Detail extends Component {
 
         axios
             .get(`https://api.github.com/repos/${params.username}/${params.name}/readme`)
-            .then(readme => {
+            .then(readmeInfo => {
                 this.setState(() => ({
-                    readme: readme.data
+                    readmeInfo: readmeInfo.data
+                }));
+                let readme = atob(this.state.readmeInfo.content);
+                this.setState(() => ({
+                    readme: readme
                 }));
             })
             .catch(err => {
@@ -62,8 +68,12 @@ class Detail extends Component {
                     !this.state.error &&
                     (
                         <div>
+                            <br/>
                             <section className="eight offset-by-two columns">
-                                <h2>Render Readme</h2>
+                                <ReactMarkdown 
+                                    source={this.state.readme}
+                                    includeNodeIndex = {true}
+                                />
                             </section>
                         </div>
                     )
